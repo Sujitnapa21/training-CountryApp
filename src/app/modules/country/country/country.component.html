@@ -1,0 +1,81 @@
+<div class="container-fluid">
+
+    <form [formGroup]= "showCountryForm">
+        <p>Country</p>
+        <input type="text" formControlName="name">
+        <p>Continent</p>
+        <input type="text" formControlName="continent">
+        <p>Region</p>
+        <input type="text" formControlName="region">
+        <p>Government</p>
+        <input type="text" formControlName="governmentForm">
+        <div>
+
+            <p class="divider"></p>
+            <button class="btn btn-info" (click)="Search()">Search</button>
+        </div>
+
+    </form>
+
+    <div>
+
+        <div class="col-3">
+        </div>
+        <div class="col-6">
+            <table class="table text-lg-center">
+                <tr>
+                    <th>Code</th>
+                    <th>Country</th>
+                    <th>Continent</th>
+                    <th>Region</th>
+                    <th>LocalName</th>
+                    <th>Government</th>
+                    <th>Surfacerea</th>
+                    <th>IndepYear</th>
+                    <th>Population</th>
+                    <th>LifeExpectancy</th>
+                    
+                </tr>
+                <tr *ngFor="let getSearch of searchCountry">
+                    <td>
+                        {{getSearch.code}}
+                    </td>                    
+                    <td>
+                        {{getSearch.name}}
+                    </td>
+                    <td>
+                        {{getSearch.continent}}
+                    </td>
+                    <td>
+                        {{getSearch.region}}
+                    </td>
+                    <td>
+                        {{getSearch.localName}}
+                    </td>
+                    <td>
+                        {{getSearch.governmentForm}}
+                    </td>
+                    <td>
+                        {{getSearch.surfaceArea}}
+                    </td>
+                    <td>
+                        {{getSearch.indepYear}}
+                    </td>
+                    <td>
+                        {{getSearch.population}}
+                    </td>
+                    <td>
+                        {{getSearch.lifeExpectancy
+                        }}
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+        <div class="col-3">
+
+        </div>
+
+    </div>
+
+</div>
